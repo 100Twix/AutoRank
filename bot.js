@@ -15,6 +15,14 @@ const {
 require("dotenv").config();
 const fs = require("fs");
 
+const typeMap = {
+  playing: 0,
+  streaming: 1,
+  listening: 2,
+  watching: 3,
+  competing: 5,
+};
+
 // Chargement des données
 let config = require("./config.json");
 let prefixData = require("./prefix.json");
@@ -215,15 +223,6 @@ client.on("messageCreate", async message => {
   }
 if (cmd === "status") {
   if (args.length < 2) return message.reply("❌ Usage: *status <playing|listening|watching|streaming|competing> <texte du status>");
-  
-  const typeMap = {
-    playing: 0,
-    streaming: 1,
-    listening: 2,
-    watching: 3,
-    competing: 5,
-  };
-  
   const typeStr = args.shift().toLowerCase();
   if (!(typeStr in typeMap)) return message.reply("❌ Type invalide. Choisis parmi: playing, streaming, listening, watching, competing");
   
@@ -397,3 +396,4 @@ client.on("guildCreate", async guild => {
 });
 
 client.login(process.env.TOKEN);
+
