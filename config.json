@@ -1,0 +1,15 @@
+{
+  "roleId": "1400865081922683030",
+  "keyword": "0x",
+  "logChannelId": "1400869674144497714",
+  "footer": "|*Autorank|",
+  "status": {
+    "type": "playing",
+    "text": "AutoRank"
+  },
+  "presence": "online",
+  "activity": {
+    "text": "test",
+    "type": "playing"
+  }
+}
